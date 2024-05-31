@@ -1,6 +1,5 @@
 # Getting Started
 Follow these steps to set up and run the project on your local machine.
-# Laravel Project
 
 ## Demo
 To see a live demo of the project, visit ```http://https://drive.google.com/drive/folders/1wWmqyxOrmpT5t_hgVsQFvEOLLHU3KxVH```.
@@ -55,14 +54,9 @@ Open your Apache configuration file, usually located at `conf/extra/httpd-vhosts
 ## Update Hosts File
 Add an entry to your hosts file to map the domain to your localhost:
 127.0.0.1    semiramis.dv
-
-
 Hosts file location: `C:\Windows\System32\drivers\etc\hosts`
-
 The application will be accessible at ```http://semiramis.dv/```.
-=======
-=======
->>>>>>> main
+
 # Sales-Management-System
 
 A robust Sales Management System built with Laravel for the backend and AJAX with jQuery/JavaScript for the frontend, featuring secure user authentication, customer and product management, real-time data updates, and comprehensive reporting tools to enhance sales efficiency and user experience.
@@ -125,7 +119,5 @@ A robust Sales Management System built with Laravel for the backend and AJAX wit
 
 ## Conclusion
 This Sales Management System project showcases a full-stack web development application using modern technologies, emphasizing both functionality and user experience. It demonstrates proficiency in backend and frontend development, database management, and the implementation of dynamic, data-driven features.
-<<<<<<< HEAD
 
-=======
 
