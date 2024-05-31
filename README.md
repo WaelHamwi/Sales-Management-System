@@ -3,6 +3,7 @@
 A robust Sales Management System built with Laravel for the backend and AJAX with jQuery/JavaScript for the frontend, featuring secure user authentication, customer and product management, real-time data updates, and comprehensive reporting tools to enhance sales efficiency and user experience.
 
 ## Google Drive Folder
+-you can click on the link below to watch a demo of the project:
 [Sales-Management-System](https://drive.google.com/drive/folders/1wWmqyxOrmpT5t_hgVsQFvEOLLHU3KxVH?usp=drive_link)
 
 ## Key Features
