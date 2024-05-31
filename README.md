@@ -2,7 +2,8 @@
 Follow these steps to set up and run the project on your local machine.
 
 ## Demo
-To see a live demo of the project, visit ```http://https://drive.google.com/drive/folders/1wWmqyxOrmpT5t_hgVsQFvEOLLHU3KxVH```.
+To see a live demo of the project, visit [Sales-Management-System](https://drive.google.com/drive/folders/1wWmqyxOrmpT5t_hgVsQFvEOLLHU3KxVH?usp=drive_link)
+.
 
 ## Prerequisites
 Make sure you have the following installed on your machine:
