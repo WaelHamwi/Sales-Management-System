@@ -1,0 +1,110 @@
+@extends('layouts.master')
+@section('title')
+{{__('s.products')}}
+@endsection
+
+@section('css')
+
+@endsection
+
+@section('content')
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ __(session('success')) }}
+    </div>
+@endif
+
+<!-- Check if there is an error message -->
+@if(session('error'))
+    <div class="alert alert-danger">
+        {{ __(session('error')) }}
+    </div>
+@endif
+  <div class="page-header">
+    <h3 class="page-title"> {{__('s.products')}} </h3>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+            <li  class="breadcrumb-item active" aria-current="page"><a href="{{ url('/') }}"> {{__('s.dashboard')}}</a></li>
+        <li class="breadcrumb-item">{{__('s.products')}}</li>
+
+      </ol>
+    </nav>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <a href="{{ route('products.create') }}" type="button" class="add-button btn btn-primary">{{__('s.add_product')}}</a>
+          </p>
+          <table id="table"   data-toggle="table"  data-pagination="true" data-search="true" data-url="{{ route('products.json') }}" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+      <thead>
+          <tr>
+              <th  data-sortable="true" data-field="name" >{{__('s.product_name')}}</th>
+              <th  data-sortable="true" data-field="price" >{{__('s.product_price')}}</th>
+              <th data-sortable="true" data-field="currency_symbol">{{__('s.currency')}}</th>
+              <th  data-sortable="true" data-field="sku" >{{__('s.SKU')}}</th>
+              <th  data-sortable="true" data-field="barcode" >{{__('s.Barcode')}}</th>
+              <th data-sortable="true" data-field="company_name">{{__('s.company_name')}}</th>
+              <th data-sortable="true" data-field="category_name">{{__('s.category_name')}}</th>
+              <th data-sortable="true" data-field="image" data-formatter="imageFormatter">{{__('s.product_image')}}</th>
+              <th data-formatter="actionFormatter">{{__('s.action')}}</th>
+          </tr>
+      </thead>
+      <tbody>
+
+</tbody>
+  </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+@endsection
+
+@section('scripts')
+<script>
+    var translations1= {'Are you sure you want to delete this product?': '{{ __("s.Are you sure you want to delete this product?") }}'}
+    var translations = {
+        'Confirmation': '{{ __("s.Confirmation") }}',
+        'Are you sure you want to delete this product?': '{{ __("s.Are you sure you want to delete this product?") }}',
+        'Yes': '{{ __("s.Yes") }}',
+        'No': '{{ __("s.No") }}',
+        'deleting product done:': '{{ __("s.deleting product done:") }}',
+    };
+
+//************the delete function is in the notify-init.js***************//
+   function actionFormatter(value, row, index) {
+       var editUrl = '{{ route('products.edit', ['id' => ':id']) }}';
+       var deleteUrl = '{{ route('products.destroy', ['id' => ':id']) }}';
+
+       editUrl = editUrl.replace(':id', row.id);
+       deleteUrl = deleteUrl.replace(':id', row.id);
+
+       return [
+           '<a href="' + editUrl + '" class="text-primary mr-3">',
+           '<i class="fas fa-edit"></i>',
+           '</a>',
+           '<a href="javascript:void(0)" class="delete-button" data-product-id="' + row.id + '" onclick="destroy(\'product\', ' + row.id + ')">' +
+     '<i class="fas fa-trash-alt text-danger"></i>' +
+ '</a>'
+
+       ].join('');
+   }
+   function imageFormatter(value, row) {
+       if (!value) {
+           // If value is empty or null, use the default placeholder image
+           var imageUrl = "{{ asset('images/placeholder.png') }}";
+       } else {
+           var imageUrl = "{{ asset('uploads/') }}" + '/' + value;
+       }
+       return '<img src="' + imageUrl + '" width="100" alt="product Image">';
+   }
+
+   // Define translations
+
+
+
+
+</script>
+
+@endsection
