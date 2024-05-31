@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Getting Started
 Follow these steps to set up and run the project on your local machine.
 # Laravel Project
@@ -130,4 +128,4 @@ This Sales Management System project showcases a full-stack web development appl
 <<<<<<< HEAD
 
 =======
->>>>>>> main
+
